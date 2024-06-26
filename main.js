@@ -8,7 +8,7 @@ let obj = {
     description: "test desc",
     meta: "test meta",
     callback: "https://hydrogenpay.com/", // Your callback redirect
-    isAPI: false,
+    isAPI: true,
 };
 
 // Replace with your actual token
