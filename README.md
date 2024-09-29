@@ -13,7 +13,7 @@ To integrate the payment gateway with your web application, follow the steps out
     1.  Include the Required Scripts
 
         ```html
-        <script src="https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js" module></script>
+        <script src="https://js.hydrogenpay.com/inline.js" module></script>
 
         ```
 
