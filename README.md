@@ -1,24 +1,71 @@
+# Checkout Inline Payment Gateway Integration Guide
+
 # Introduction 
 
-This is a simple guide on how to integrate a payment gateway using an inline JavaScript popup. The provided code sample includes an HTML document with an embedded script that triggers a checkout modal.
-
-The payment gateway integration is facilitated through the use of the "HydrogenPGIntegration.js" script hosted on Azure Blob Storage.
+This guide provides a step-by-step approach to integrating a payment gateway using an inline JavaScript popup modal. The code samples include both the HTML structure and JavaScript logic to facilitate a seamless checkout experience on your web application.
 
 # Getting Started
 
-The below steps can help you to easily integrate the provided code sample into your web application to enable a seamless payment gateway experience with an inline JavaScript popup.
+To integrate the payment gateway with your web application, follow the steps outlined below. These steps will guide you through adding the required scripts, triggering a checkout modal, and handling the payment process.
 
 1.	Integration steps
 
-    1.  Include the Required Scripts either QA or PROD.
+    1.  Include the Required Scripts
 
-    2.  Create a Checkout Button. Add a button to your HTML page that will trigger the checkout modal. In this example, the button has an ID of "myBtn" and calls the openDialogModal() function when clicked.
-    
-    3.  Include Payment Information. Set up a JavaScript object (obj) with the necessary parameters for the payment transaction. This object will be used to initiate the payment link through an API.
+        ```html
+        <script src="https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js" module></script>
 
-    4.  Authorization Token. Obtain an authorization token (token) from Hydrogenpay dashboard based on your testing or production requirements.
+        ```
 
-    5.  Payment Gateway Function. Implement the openDialogModal function, which calls the handlePgData function from the external script with the defined payment information and token.
+    2. Create a Checkout Button
+
+        Add a button to your HTML page to trigger the checkout modal. In this example, the button has an ID of myBtn and calls the openDialogModal() function when clicked.
+
+        ```html
+        <button id="myBtn" onclick="openDialogModal()">Checkout</button>
+
+        ```
+
+    3. Include Payment Information
+
+        Set up a JavaScript object that contains the necessary parameters for the payment transaction, such as amount, email, currency, and callback URL. This object will be used to initialize the payment request.
+
+        ```javascript
+
+        let obj = {
+            amount: 100,                       // Payment amount
+            email: "bwitlawalyusuf@gmail.com", // Customer's email address
+            currency: "NGN",                   // Currency code (e.g., NGN for Nigerian Naira)
+            description: "test desc",          // Payment description (what the payment is for)
+            meta: "Lawal Yusuf",                 // Meta information (extra info to be passed with the payment)
+            callback: window.location.href,    // Callback URL for redirect after payment (can be replaced with your actual URL)
+            isAPI: true,                       // Flag to indicate if the transaction is via API (set to true)
+        };
+
+        ```
+
+    4. APIs Keys (Sandbox Apis Keys / Live Apis Keys)
+
+        Obtain an Apis Keys from the HydrogenPay dashboard. This token is necessary for both Sanbox and production environments.
+        
+        ```javascript
+
+        let token = "PK_TEST_cca53e0b3bc7847aff94502b8a585f84"; // Replace with actual Apis key
+        ```
+
+    5. Implement the Payment Gateway Function
+
+        Implement the openDialogModal() function, which will call the payment gateway with the provided payment information and authorization token. Handle the success, failure, and close events accordingly.
+
+        ```javascript
+
+        async function openDialogModal() {
+            let transactionRef = await handlePgData(obj, token, onClose);
+            // Handle transaction status and update UI accordingly
+
+        }
+
+        ```
 
 # Request Parameters
 
@@ -54,7 +101,6 @@ The below steps can help you to easily integrate the provided code sample into y
 | 9000        | Custom | Successful transaction                |
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
 If you discover a bug or have a solution to improve the Payment Gateway for Hydrogen,
 we welcome your contributions to enhance the code.
