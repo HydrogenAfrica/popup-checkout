@@ -100,6 +100,17 @@ To integrate the payment gateway with your web application, follow the steps out
 | 10002       | Custom | Invalid transactionId                 |
 | 9000        | Custom | Successful transaction                |
 
+# Screenshot
+
+## Popup Checkout
+
+![Screenshot 1](https://github.com/HydrogenAfrica/popup-checkout/blob/dev/images/checkout-img1.png)
+
+##
+
+![Screenshot 2](https://github.com/HydrogenAfrica/popup-checkout/blob/dev/images/checkout-img2.png)
+
+
 # Contribute
 
 If you discover a bug or have a solution to improve the Payment Gateway for Hydrogen,
