@@ -104,11 +104,11 @@ To integrate the payment gateway with your web application, follow the steps out
 
 ## Popup Checkout
 
-![Screenshot 1](https://github.com/HydrogenAfrica/popup-checkout/blob/dev/images/checkout-img1.png)
+![Screenshot 1](https://github.com/HydrogenAfrica/popup-checkout/blob/main/images/checkout-img1.png)
 
 ##
 
-![Screenshot 2](https://github.com/HydrogenAfrica/popup-checkout/blob/dev/images/checkout-img2.png)
+![Screenshot 2](https://github.com/HydrogenAfrica/popup-checkout/blob/main/images/checkout-img2.png)
 
 
 # Contribute
