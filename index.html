@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Payment Gateway Integration</title>
+  </head>
 
-</head>
+  <body>
+    <!-- Step 1: Include the Script for the Hydrogen Payment Gateway -->
+    <!-- The script source is provided by the Hydrogen Developers and contains necessary functions for payment processing. -->
+    <script
+      src="https://js.hydrogenpay.com/inline.js"
+      module
+    ></script>
 
-<body>
-
-    <!-- Include the Script src for QA -->
-    <script src="https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayInegration.js"
-        module></script>
-
-    <!-- Include the Script src for Prod -->
-    <!-- <script src="https://hydrogenshared.blob.core.windows.net/paymentgateway/HydrogenPGIntegration.js" module></script> -->
-
-    <!-- Trigger/Open The Modal -->
+    <!-- Step 2: Create a Button to Trigger the Payment Modal -->
+    <!-- This button is used to trigger the payment process. When clicked, it will call the `openDialogModal()` function defined in main.js file. -->
     <button id="myBtn" onclick="openDialogModal()">Checkout</button>
 
-    <!-- Include the main.js file -->
+    <!-- Step 3: Include the main JavaScript File -->
+    <!-- The `main.js` file contains the main logic for handling the payment process, such as initializing the payment, handling callbacks (success, failure), 
+    and checking the payment status. Ensure the file is properly linked to the HTML. -->
     <script src="main.js"></script>
-
-</body>
-
+  </body>
 </html>
