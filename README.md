@@ -38,7 +38,7 @@ To integrate the payment gateway with your web application, follow the steps out
             currency: "NGN",                   // Currency code (e.g., NGN for Nigerian Naira)
             description: "test desc",          // Payment description (what the payment is for)
             meta: "Lawal Yusuf",                 // Meta information (extra info to be passed with the payment)
-            callback: window.location.href,    // Callback URL for redirect after payment (can be replaced with your actual URL)
+            callback: "https://www.google.com/", // Callback URL for redirect after payment (can be replaced with your actual URL)
             isAPI: true,                       // Flag to indicate if the transaction is via API (set to true)
         };
 
