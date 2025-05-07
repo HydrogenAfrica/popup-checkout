@@ -5,7 +5,8 @@ let obj = {
   currency: "NGN",
   description: "test desc",
   meta: "Lawal Yusuf",
-  callback: window.location.href,
+  //callback: window.location.href,
+  callback: "https://www.google.com/",
   isAPI: true,
 };
 
@@ -24,7 +25,8 @@ function onSuccessCallback(transactionRef) {
     // Implement your custom logic here when payment successful
 
     // Append the transaction reference (transactionRef) to the current URL as a query parameter.
-    const currentUrl = new URL(window.location.href);
+    // const currentUrl = new URL(window.location.href);
+    const currentUrl = new URL(obj.callback);
     currentUrl.searchParams.set("transactionRef", transactionRef); // Add transactionRef to the URL
     window.location.href = currentUrl.toString(); // Redirect to the updated URL
   }
